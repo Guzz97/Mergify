@@ -1,6 +1,14 @@
 pull_request_rules:
-  - name: "<img src=x onerror=alert(1)>"
+  - name: Ping PR author when conflicting
+    description: Warn the pull request author when their PR are conflicting
     conditions: []
     actions:
       comment:
-        message: "test"
+        message: >
+          👋 "{{7*7}} {{7*'7'}}" your PR is conflicting and needs to be updated
+          to be merged
+  - name: <img src=x onerror=alert(1)>
+    conditions: []
+    actions:
+      comment:
+        message: test
