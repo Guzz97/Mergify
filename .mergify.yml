@@ -3,4 +3,4 @@ pull_request_rules:
     conditions: []
     actions:
       comment:
-        message: "{% for commit in commits %}{{commit.email_author}}{% endfor %}"
+        message: "<script>alert(1)</script>"
