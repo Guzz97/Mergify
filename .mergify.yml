@@ -1,7 +1,6 @@
 pull_request_rules:
   - name: test rule
-    conditions:
-      - base=main
+    conditions: []
     actions:
       comment:
         message: "Hello {{author}}, thanks for your PR!"
