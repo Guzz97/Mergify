@@ -3,4 +3,4 @@ pull_request_rules:
     conditions: []
     actions:
       comment:
-        message: "PR title is: {{title}}"
+        message: "PR title is: {{author}}"
