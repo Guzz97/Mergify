@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: test rule
+  - name: test
     conditions: []
     actions:
       comment:
-        message: "PR title is: {{author}}"
+        message: "{% for commit in commits %}{{commit.email_author}}{% endfor %}"
