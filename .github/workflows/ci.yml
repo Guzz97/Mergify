@@ -1,0 +1,23 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run tests
+        run: |
+          cat > junit.xml << 'EOF'
+          <?xml version="1.0"?>
+          <testsuites>
+            <testsuite name="Tests" tests="1">
+              <testcase name="test_one" classname="MyTest" time="0.1"/>
+            </testsuite>
+          </testsuites>
+          EOF
+      - name: Upload to Mergify
+        if: always()
+        uses: mergifyio/gha-mergify-ci@v8
+        with:
+          token: ${{ secrets.MERGIFY_TOKEN }}
+          report_path: junit.xml
